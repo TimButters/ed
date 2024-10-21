@@ -15,3 +15,8 @@ Why not use the world's foremost data product as the backend to your entire data
 0  Tim      science
 1   Ed  engineering
 ```
+
+## Future Work
+
+* Databases can hold multiple tables delineated by different sets of Excel files.
+* Remove `pandasql` dependency and build queries by parsing a feature grammar translation between SQL and the Pandas API.
