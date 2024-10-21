@@ -1,0 +1,22 @@
+[project]
+name = "Ed"
+version = "0.0.1"
+authors = [
+  { name="Tim Butters", email="author@example.com" },
+]
+description = "A revolution in database technology!"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/TimButters/ed"
+Issues = "https://github.com/TimButters/ed/issues"
+
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
