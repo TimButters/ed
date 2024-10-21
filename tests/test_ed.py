@@ -5,6 +5,6 @@ from ed import Ed
 
 def test_db_create():
     db = Ed("tests/testdb")
-    res = db.sql("SELECT * FROM db")
+    res = db.sql("SELECT * FROM table")
     assert isinstance(res, pd.DataFrame)
     assert len(res) == 2

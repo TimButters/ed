@@ -10,7 +10,7 @@ Why not use the world's foremost data product as the backend to your entire data
 >>> from ed import Ed
 
 >>> db = Ed("testdb")
->>> db.sql("SELECT * FROM db")
+>>> db.sql("SELECT * FROM table")
   Name         Team
 0  Tim      science
 1   Ed  engineering
