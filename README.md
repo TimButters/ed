@@ -6,20 +6,38 @@ Why not use the world's foremost data product as the backend to your entire data
 
 ## Advantages
 
-A lot of software consists of a complex backend with a simplified, easy to use, GUI front end. Ed, however, utilises a an easy to use GUI-based backend and adds a more technical API.
+A lot of software consists of a complex backend with a simplified, easy to use, GUI front end. Ed, however, utilises an easy to use GUI-based backend and adds a more technical API on top.
 
 Due to the complexities of sharding a proprietary file format, Ed is entirely in-memory, just like Spark!
 
 ## Examples
 
+### Querying an Excel database
+
+Select all values from the table `users` in the `testdb` database.
+
 ```python
 >>> from ed import Ed
 
->>> db = Ed("testdb")
->>> db.sql("SELECT * FROM table")
+>>> db = Ed()
+>>> db.connect("testdb")
+>>> db.sql("SELECT * FROM users")
   Name         Team
 0  Tim      science
 1   Ed  engineering
+```
+
+### Creating a new database
+
+Create a new database `myed` and create two tables, `users` and `products`
+
+```python
+>>> from ed import Ed
+
+>>> db = Ed()
+>>> db.create("myed")
+>>> db.write_table("users", df_user)
+>>> db.write_table("products", df_product)
 ```
 
 ## Future Work
