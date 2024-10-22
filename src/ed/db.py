@@ -45,6 +45,7 @@ class Ed:
             if f.match("*.xlsx"):
                 table_name = str(f).split("/")[-1].split(".")[0]
                 self._tables[table_name] = pd.read_excel(f)
+        return self
 
     def create(self, dbname):
         """Create a new Excel database.
@@ -66,6 +67,7 @@ class Ed:
         if path.exists():
             raise EdDbAlreadyExists(f"Excel database `{dbname}` already exists.")
         path.mkdir(parents=True, exist_ok=False)
+        return self
 
     def write_table(self, table: str, df: pd.DataFrame):
         """Write a new table to the Excel database.
