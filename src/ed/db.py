@@ -7,13 +7,13 @@ from pathlib import Path
 
 class Ed:
     def __init__(self, dbname):
-        dfs = []
+        self._tables = {}
         for f in Path(dbname).iterdir():
             if f.match("*.xlsx"):
-                dfs.append(pd.read_excel(f))
-        self._df = pd.concat(dfs)
+                table_name = str(f).split("/")[-1].split(".")[0]
+                self._tables[table_name] = pd.read_excel(f)
 
-    def sql(self, query: str):
-        df = self._df
+    def sql(self, query: str, table: str):
+        df = self._tables[table]
         q = re.sub(r"FROM\s+\w+", r"FROM df", query, re.IGNORECASE)
         return ps.sqldf(q, locals())
