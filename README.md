@@ -24,5 +24,5 @@ Due to the complexities of sharding a proprietary file format, Ed is entirely in
 
 ## Future Work
 
-* Databases can hold multiple tables delineated by different sets of Excel files.
 * Remove `pandasql` dependency and build queries by parsing a feature grammar translation between SQL and the Pandas API.
+* Re-write in Rust and/or Haskell.
